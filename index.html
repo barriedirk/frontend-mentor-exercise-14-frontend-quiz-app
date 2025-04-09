@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./reset.css" />
+    <link rel="stylesheet" href="./main.css" />
+    <link rel="stylesheet" href="./checkbox-toggle.css" />
+
+    <script defer type="module" src="./main.js"></script>
+
+    <title>Frontend Mentor | Frontend quiz app</title>
+  </head>
+  <body class="flex-column">
+    <main>
+      <header class="wizard-header flex-row">
+        <div class="wizard-header--text flex-row">
+          <img class="" src="" />
+          <h3></h3>
+        </div>
+        <div class="wizard-header__toggle flex-row">
+          <span class="icon-sun"></span>
+
+          <div class="checkbox-switch">
+            <label class="switch" for="theme-toggle">
+              <input
+                type="checkbox"
+                id="theme-toggle"
+                aria-label="Toggle between dark and light mode"
+              />
+              <div class="slider round"></div>
+            </label>
+          </div>
+
+          <span class="icon-moon"></span>
+        </div>
+      </header>
+
+      <div class="wizard">
+        <section class="wizard-choices--wrapper" aria-live="polite">
+          <h1>Welcome to the <strong>Frontend Quiz!</strong></h1>
+          <p>Pick a subject to get started.</p>
+
+          <ul class="wizard-choices--list flex-column" role="tablist">
+            <li>
+              <button data-option="html" class="flex-row" type="button">
+                <img src="./assets/images/icon-html.svg" />
+                <span>HTML</span>
+              </button>
+            </li>
+            <li>
+              <button data-option="css" class="flex-row" type="button">
+                <img src="./assets/images/icon-css.svg" />
+                <span>CSS</span>
+              </button>
+            </li>
+            <li>
+              <button data-option="js" class="flex-row" type="button">
+                <img src="./assets/images/icon-js.svg" />
+                <span>JavaScript</span>
+              </button>
+            </li>
+            <li>
+              <button
+                data-option="accessibility"
+                class="flex-row"
+                type="button"
+              >
+                <img src="./assets/images/icon-accessibility.svg" />
+                <span>Accessibility</span>
+              </button>
+            </li>
+          </ul>
+        </section>
+      </div>
+    </main>
+
+    <!-- Quiz menu start -->
+
+    <hr />
+
+    <!-- Quiz menu end -->
+
+    <!-- Quiz question start -->
+
+    <div class="hidden">
+      Question
+      <!-- number -->
+      of 10<br />
+
+      A<br />
+      B<br />
+      C<br />
+      D<br />
+
+      Submit answer<br />
+    </div>
+
+    <div class="hidden">
+      <!-- Quiz question end -->
+
+      <!-- Quiz completed start -->
+
+      Quiz completed<br />
+      You scored...<br />
+
+      <!-- score -->
+      out of 10<br />
+
+      <!-- Quiz completed end -->
+    </div>
+  </body>
+</html>

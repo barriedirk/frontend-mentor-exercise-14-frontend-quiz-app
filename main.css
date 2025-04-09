@@ -1,0 +1,172 @@
+:root {
+  --fw-thin: 100;
+  --fw-extralight: 200;
+  --fw-light: 300;
+  --fw-normal: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+  --fw-extrabold: 800;
+  --fw-black: 900;
+
+  --ff: "Rubik", sans-serif;
+
+  --clr-white: hsl(0, 100%, 100%);
+  --clr-black: hsl(0, 0%, 0%);
+
+  --clr-grey-50: hsl(220, 38%, 97%);
+  --clr-grey-500: hsl(219, 13%, 44%);
+
+  --clr-blue-50: hsl(225, 100%, 96%);
+  --clr-blue-100: hsl(220, 50%, 95%);
+  --clr-blue-300: hsl(216, 47%, 78%);
+  --clr-blue-500: hsl(223, 100%, 59%);
+  --clr-blue-850: hsl(215, 27%, 32%);
+  --clr-blue-900: hsl(216, 25%, 25%);
+  --clr-blue-950: hsl(214, 24%, 23%);
+
+  --clr-green-100: hsl(151, 88%, 94%);
+  --clr-green-500: hsl(151, 68%, 52%);
+
+  --clr-purple-100: hsl(278, 100%, 95%);
+  --clr-purple-600: hsl(277, 91%, 56%);
+
+  --clr-orange-50: hsl(27, 100%, 96%);
+  --clr-orange-400: hsl(22, 100%, 60%);
+
+  --clr-red-500: hsl(0, 82%, 63%);
+
+  --bg-icon-moon-light: url("./assets/images/icon-moon-light.svg");
+  --bg-icon-moon-dark: url("./assets/images/icon-moon-dark.svg");
+
+  --bg-icon-sun-light: url("./assets/images/icon-sun-light.svg");
+  --bg-icon-sun-dark: url("./assets/images/icon-sun-dark.svg");
+
+  /* Light theme colors */
+  --background-color: var(--clr-grey-50);
+  --text-color: var(--clr-blue-900);
+  /* --primary-color: #007bff; */
+  --bg-icon-moon: url("./assets/images/icon-moon-light.svg");
+  --bg-icon-sun: url("./assets/images/icon-sun-light.svg");
+
+  --bg-btn-choice: var(--clr-white);
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: var(--ff);
+  font-weight: var(--fw-normal);
+  background-color: var(--background-color);
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s;
+
+  justify-content: flex-start;
+  align-items: center;
+}
+
+main {
+  width: 100%;
+  max-width: 375px;
+}
+
+.wizard-header {
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 0;
+}
+
+.wizard-header__toggle {
+  gap: 5px;
+  align-items: center;
+}
+
+.wizard-header__toggle span {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  filter: invert(1);
+}
+
+.icon-sun {
+  background-image: var(--bg-icon-sun);
+}
+
+.icon-moon {
+  background-image: var(--bg-icon-moon);
+}
+
+.wizard-choices--wrapper h1 {
+  font-size: 4rem;
+  line-height: 1;
+  font-weight: var(--fw-light);
+}
+
+.wizard-choices--wrapper h1 strong {
+  font-weight: var(--fw-bold);
+}
+
+.wizard-choices--wrapper p {
+  font-size: 1.6rem;
+  font-weight: var(--fw-light);
+  font-style: italic;
+}
+
+.wizard-choices--list {
+  gap: 16px;
+}
+
+.wizard-choices--list button {
+  border-radius: 12px;
+  background-color: var(--bg-btn-choice);
+  width: 100%;
+  align-items: center;
+  gap: 16px;
+  padding: 16px;
+}
+
+.wizard-choices--list button img {
+  width: 40px;
+  height: 40px;
+  padding: 5px;
+}
+
+.wizard-choices--list li:nth-child(1) button img {
+  background-color: var(--clr-orange-50);
+}
+
+.wizard-choices--list li:nth-child(2) button img {
+  background-color: var(--clr-green-100);
+}
+
+.wizard-choices--list li:nth-child(3) button img {
+  background-color: var(--clr-blue-50);
+}
+
+.wizard-choices--list li:nth-child(4) button img {
+  background-color: var(--clr-purple-100);
+}
+
+.wizard-choices--list button span {
+  font-size: 1.6rem;
+  font-weight: var(--fw-medium);
+}
+
+.hidden {
+  display: none !important;
+}
