@@ -28,9 +28,12 @@
   </head>
   <body class="flex-column">
     <main>
-      <header class="wizard-header flex-row">
-        <div class="wizard-header--option-selected flex-row"></div>
-        <div class="wizard-header__toggle flex-row">
+      <header class="quiz-header flex-row">
+        <div class="quiz-header--option-selected flex-row">
+          <img src="./assets/images/icon-html.svg" class="bg-orange" />
+          <span>HTML</span>
+        </div>
+        <div class="quiz-header__toggle flex-row">
           <span class="icon-sun"></span>
 
           <div class="checkbox-switch">
@@ -48,28 +51,28 @@
         </div>
       </header>
 
-      <div class="wizard">
-        <section class="wizard-choices--wrapper" aria-live="polite">
-          <div class="wizard-choices-description">
+      <div class="quiz">
+        <section class="quiz-choices--wrapper" aria-live="polite">
+          <div class="quiz-choices-description">
             <h1>Welcome to the <strong>Frontend Quiz!</strong></h1>
             <p>Pick a subject to get started.</p>
           </div>
-          <ul class="wizard-choices--list flex-column" role="tablist">
+          <ul class="quiz-choices--list flex-column" role="tablist">
             <li>
               <button data-option="html" class="flex-row" type="button">
-                <img src="./assets/images/icon-html.svg" />
+                <img src="./assets/images/icon-html.svg" class="bg-orange" />
                 <span>HTML</span>
               </button>
             </li>
             <li>
               <button data-option="css" class="flex-row" type="button">
-                <img src="./assets/images/icon-css.svg" />
+                <img src="./assets/images/icon-css.svg" class="bg-green" />
                 <span>CSS</span>
               </button>
             </li>
             <li>
               <button data-option="js" class="flex-row" type="button">
-                <img src="./assets/images/icon-js.svg" />
+                <img src="./assets/images/icon-js.svg" class="bg-blue" />
                 <span>JavaScript</span>
               </button>
             </li>
@@ -79,11 +82,140 @@
                 class="flex-row"
                 type="button"
               >
-                <img src="./assets/images/icon-accessibility.svg" />
+                <img
+                  src="./assets/images/icon-accessibility.svg"
+                  class="bg-purple"
+                />
                 <span>Accessibility</span>
               </button>
             </li>
           </ul>
+        </section>
+
+        <section class="quiz-questions--wrapper" aria-live="polite">
+          <div class="question flex-column">
+            <p>Question 6 of 10</p>
+            <h2>
+              Which of these color contrast ratios defines the minimum WCAG 2.1
+              Level AA requirement for normal text?
+            </h2>
+            <div class="quiz-progress-bar-wrapper">
+              <div class="quiz-progress-bar" style="width: 50%"></div>
+            </div>
+          </div>
+
+          <form class="quiz-answers">
+            <fieldset class="flex-column">
+              <label
+                class="quiz-answer-option-wrapper"
+                for="answer-a"
+                tabindex="0"
+              >
+                <input
+                  type="radio"
+                  value="A"
+                  id="answer-a"
+                  name="answer-option"
+                />
+                <div class="answer-option-wrapper flex-row">
+                  <span class="answer-option">A</span>
+                  <span class="answer-text">4.5 : 1</span>
+                </div>
+              </label>
+              <label
+                class="quiz-answer-option-wrapper"
+                for="answer-b"
+                tabindex="0"
+              >
+                <input
+                  type="radio"
+                  value="B"
+                  id="answer-b"
+                  name="answer-option"
+                />
+                <div class="answer-option-wrapper flex-row">
+                  <span class="answer-option">B</span>
+                  <span class="answer-text">4.5 : 1</span>
+                </div>
+              </label>
+              <label
+                class="quiz-answer-option-wrapper"
+                for="answer-c"
+                tabindex="0"
+              >
+                <input
+                  type="radio"
+                  value="C"
+                  id="answer-c"
+                  name="answer-option"
+                />
+                <div class="answer-option-wrapper flex-row">
+                  <span class="answer-option">C</span>
+                  <span class="answer-text">4.5 : 1</span>
+                </div>
+              </label>
+              <label
+                class="quiz-answer-option-wrapper"
+                for="answer-d"
+                tabindex="0"
+              >
+                <input
+                  type="radio"
+                  value="D"
+                  id="answer-d"
+                  name="answer-option"
+                  disabled
+                />
+                <div class="answer-option-wrapper flex-row">
+                  <span class="answer-option">D</span>
+                  <span class="answer-text">4.5 : 1</span>
+                </div>
+              </label>
+              <label
+                class="quiz-answer-option-wrapper correct"
+                for="answer-e"
+                tabindex="0"
+              >
+                <input
+                  type="radio"
+                  value="E"
+                  id="answer-e"
+                  name="answer-option"
+                  disabled
+                />
+                <div class="answer-option-wrapper flex-row">
+                  <span class="answer-option">E</span>
+                  <span class="answer-text">4.5 : 1</span>
+                </div>
+              </label>
+              <label
+                class="quiz-answer-option-wrapper error"
+                for="answer-f"
+                tabindex="0"
+              >
+                <input
+                  type="radio"
+                  value="F"
+                  id="answer-f"
+                  name="answer-option"
+                  disabled
+                />
+                <div class="answer-option-wrapper flex-row">
+                  <span class="answer-option">F</span>
+                  <span class="answer-text">4.5 : 1</span>
+                </div>
+              </label>
+            </fieldset>
+
+            <div class="answer-actions">
+              <button class="" type="button" id="submit-answer">
+                Submit answer
+              </button>
+              <button class="hidden" type="button" id="next-question">
+                Next Question
+              </button>
+            </div>
+          </form>
         </section>
       </div>
     </main>
@@ -95,19 +227,6 @@
     <!-- Quiz menu end -->
 
     <!-- Quiz question start -->
-
-    <div class="hidden">
-      Question
-      <!-- number -->
-      of 10<br />
-
-      A<br />
-      B<br />
-      C<br />
-      D<br />
-
-      Submit answer<br />
-    </div>
 
     <div class="hidden">
       <!-- Quiz question end -->
