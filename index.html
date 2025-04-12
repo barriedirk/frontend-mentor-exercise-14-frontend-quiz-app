@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="./checkbox-toggle.css" />
 
     <script defer type="module" src="./main.js"></script>
+    <script defer type="module" src="./toggle-switch.js"></script>
 
     <title>Frontend Mentor | Frontend quiz app</title>
   </head>
@@ -217,29 +218,28 @@
             </div>
           </form>
         </section>
+
+        <section class="quiz-complete--wrapper" aria-live="polite">
+          <div class="quiz-complete--header">
+            <h2>
+              Quiz completed
+              <strong>You scored...</strong>
+            </h2>
+          </div>
+          <div class="quiz-complete--body flex-column">
+            <div class="quiz-complete--result flex-column">
+              <div class="quiz-complete--choiced flex-row">
+                <img src="./assets/images/icon-html.svg" class="bg-orange" />
+                <span>HTML</span>
+              </div>
+              <p class="quiz-complete--correct-answers">8</p>
+              <p class="quiz-complete--total-answers">out of 10</p>
+            </div>
+
+            <button type="button" id="play-again">Play Again</button>
+          </div>
+        </section>
       </div>
     </main>
-
-    <!-- Quiz menu start -->
-
-    <hr />
-
-    <!-- Quiz menu end -->
-
-    <!-- Quiz question start -->
-
-    <div class="hidden">
-      <!-- Quiz question end -->
-
-      <!-- Quiz completed start -->
-
-      Quiz completed<br />
-      You scored...<br />
-
-      <!-- score -->
-      out of 10<br />
-
-      <!-- Quiz completed end -->
-    </div>
   </body>
 </html>
