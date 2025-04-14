@@ -250,15 +250,37 @@ main {
   border-radius: 12px;
 }
 
+.select-an-answer {
+  color: var(--clr-red-500);
+  font-size: 2.4rem;
+  font-weight: var(--fw-normal);
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 32px;
+}
+
+.select-an-answer img {
+  width: 30px;
+  height: 30px;
+}
+
+.quiz-answer-option-wrapper.correct
+  input[type="radio"]:checked
+  + .answer-option-wrapper,
+.quiz-answer-option-wrapper.correct .answer-option-wrapper {
+  border-color: var(--clr-green-500);
+}
+
 .quiz-answer-option-wrapper.correct
   input[type="radio"]:checked
   + .answer-option-wrapper
   .answer-option,
 .quiz-answer-option-wrapper.correct .answer-option-wrapper .answer-option {
-  background-color: var(--clr-green-500);
-  color: var(--clr-white);
+  border-color: var(--clr-green-500);
 }
 
+.quiz-answer-option-wrapper.answer-correct .answer-option-wrapper,
 .quiz-answer-option-wrapper.correct .answer-option-wrapper {
   background-image: url("./assets//images/icon-correct.svg");
 }
@@ -276,7 +298,6 @@ main {
   .answer-option,
 .quiz-answer-option-wrapper.error .answer-option-wrapper .answer-option {
   background-color: var(--clr-red-500);
-  color: var(--clr-white);
 }
 
 .quiz-answer-option-wrapper.error .answer-option-wrapper {
@@ -451,6 +472,39 @@ main {
   font-weight: var(--fw-medium);
   padding: 16px;
   width: 100%;
+}
+
+.spinner-wrapper {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.15);
+  top: 0;
+  left: 0;
+}
+
+/* Spinner styles */
+.spinner {
+  border: 8px solid #f3f3f3; /* Light grey border */
+  border-top: 8px solid #3498db; /* Blue color for the spinning part */
+  border-radius: 50%; /* Make it circular */
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite; /* Animation to spin it */
+}
+
+/* Spinner animation */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 @media screen and (min-width: 768px) {

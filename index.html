@@ -28,6 +28,9 @@
     <title>Frontend Mentor | Frontend quiz app</title>
   </head>
   <body class="flex-column">
+    <div class="spinner-wrapper hidden">
+      <div class="spinner"></div>
+    </div>
     <main>
       <header class="quiz-header flex-row">
         <div class="quiz-header--option-selected flex-row">
@@ -60,26 +63,26 @@
           </div>
           <ul class="quiz-choices--list flex-column" role="tablist">
             <li>
-              <button data-option="html" class="flex-row" type="button">
+              <button data-option="HTML" class="flex-row" type="button">
                 <img src="./assets/images/icon-html.svg" class="bg-orange" />
                 <span>HTML</span>
               </button>
             </li>
             <li>
-              <button data-option="css" class="flex-row" type="button">
+              <button data-option="CSS" class="flex-row" type="button">
                 <img src="./assets/images/icon-css.svg" class="bg-green" />
                 <span>CSS</span>
               </button>
             </li>
             <li>
-              <button data-option="js" class="flex-row" type="button">
+              <button data-option="JavaScript" class="flex-row" type="button">
                 <img src="./assets/images/icon-js.svg" class="bg-blue" />
                 <span>JavaScript</span>
               </button>
             </li>
             <li>
               <button
-                data-option="accessibility"
+                data-option="Accessibility"
                 class="flex-row"
                 type="button"
               >
@@ -93,20 +96,25 @@
           </ul>
         </section>
 
-        <section class="quiz-questions--wrapper" aria-live="polite">
+        <section class="quiz-questions--wrapper hidden" aria-live="polite">
           <div class="question flex-column">
-            <p>Question 6 of 10</p>
-            <h2>
+            <!-- As a example -->
+            <!-- <p class="quiz-questions--advanced">Question 6 of 10</p>
+            <h2 class="quiz-questions--title">
               Which of these color contrast ratios defines the minimum WCAG 2.1
               Level AA requirement for normal text?
-            </h2>
+            </h2> -->
+            <p class="quiz-questions--advanced"></p>
+            <h2 class="quiz-questions--title"></h2>
             <div class="quiz-progress-bar-wrapper">
-              <div class="quiz-progress-bar" style="width: 50%"></div>
+              <div class="quiz-progress-bar" style="width: 0%"></div>
             </div>
           </div>
 
           <form class="quiz-answers">
             <fieldset class="flex-column">
+              <!-- As a example -->
+              <!-- 
               <label
                 class="quiz-answer-option-wrapper"
                 for="answer-a"
@@ -205,21 +213,28 @@
                   <span class="answer-option">F</span>
                   <span class="answer-text">4.5 : 1</span>
                 </div>
-              </label>
+              </label> -->
             </fieldset>
 
             <div class="answer-actions">
-              <button class="" type="button" id="submit-answer">
+              <button class="" type="submit" id="submit-answer">
                 Submit answer
               </button>
               <button class="hidden" type="button" id="next-question">
                 Next Question
               </button>
+              <button class="hidden" type="button" id="show-result">
+                Show Result
+              </button>
+              <div class="select-an-answer hidden flex-row">
+                <img src="./assets/images/icon-error.svg" />
+                <span>Please select an answer</span>
+              </div>
             </div>
           </form>
         </section>
 
-        <section class="quiz-complete--wrapper" aria-live="polite">
+        <section class="quiz-complete--wrapper hidden" aria-live="polite">
           <div class="quiz-complete--header">
             <h2>
               Quiz completed
