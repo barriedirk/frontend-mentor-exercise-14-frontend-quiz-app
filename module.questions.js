@@ -127,7 +127,9 @@ export const questionsForm = ({
     correctAnswers: 0,
   };
 
+  $btnSubmitAnswer.classList.remove("hidden");
   $errorSelectAnAnswer.classList.add("hidden");
+  $btnNextQuestion.classList.add("hidden");
   $btnShowResult.classList.add("hidden");
 
   // initialOptions
@@ -153,6 +155,12 @@ export const questionsForm = ({
       if (!ansCustomer) {
         $errorSelectAnAnswer.classList.remove("hidden");
 
+        window.scrollTo({
+          top: $errorSelectAnAnswer.getBoundingClientRect().top,
+          left: 0,
+          behavior: "smooth",
+        });
+
         return;
       }
 
@@ -166,7 +174,12 @@ export const questionsForm = ({
 
       $errorSelectAnAnswer.classList.add("hidden");
       $btnSubmitAnswer.classList.add("hidden");
-      $btnNextQuestion.classList.remove("hidden");
+
+      if (state.step == state.total) {
+        $btnShowResult.classList.remove("hidden");
+      } else {
+        $btnNextQuestion.classList.remove("hidden");
+      }
     },
     {
       signal: controller.signal,
@@ -214,7 +227,10 @@ export const questionsForm = ({
     (event) => {
       event.preventDefault();
 
-      showSectionComplete(state);
+      showSectionComplete({
+        total: state.total,
+        correctAnswers: state.correctAnswers,
+      });
 
       controller.abort();
     },

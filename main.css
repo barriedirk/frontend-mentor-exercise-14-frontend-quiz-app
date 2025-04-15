@@ -214,16 +214,17 @@ main {
 }
 
 .answer-option {
-  display: inline-block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   border-radius: 12px;
   background: var(--clr-grey-50);
   color: var(--clr-black);
 
   width: 40px;
   height: 40px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  flex: 0 0 40px;
 }
 
 .quiz-answer-option-wrapper
@@ -238,6 +239,10 @@ main {
   .answer-option {
   background: var(--clr-purple-600);
   color: var(--clr-white);
+}
+
+.answer-actions {
+  position: relative;
 }
 
 .answer-actions button {
@@ -258,6 +263,8 @@ main {
   justify-content: center;
   align-items: center;
   margin-top: 32px;
+  width: 100%;
+  position: absolute;
 }
 
 .select-an-answer img {
@@ -482,7 +489,7 @@ main {
   height: 100vh;
   width: 100%;
   z-index: 10;
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.45);
   top: 0;
   left: 0;
 }
@@ -586,6 +593,7 @@ main {
   .answer-option {
     width: 56px;
     height: 56px;
+    flex: 0 0 56px;
   }
 
   .quiz-complete--header h2 {
@@ -635,8 +643,7 @@ main {
 @media screen and (min-width: 1440px) {
   body {
     background-image: var(--pattern-desktop);
-    background-size: contain;
-    background-position: left top;
+    background-size: cover;
   }
 
   main {

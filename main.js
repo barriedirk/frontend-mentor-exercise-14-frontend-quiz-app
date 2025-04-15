@@ -9,8 +9,11 @@ import { questionsForm } from "./module.questions.js";
   const $quizChoices = $(".quiz-choices--wrapper");
   const $quizQuestions = $(".quiz-questions--wrapper");
   const $quizComplete = $(".quiz-complete--wrapper");
+  const $totalCorrectAnswers = $(".quiz-complete--correct-answers");
+  const $totalAnswers = $(".quiz-complete--total-answers");
   const $spinner = $(".spinner-wrapper");
   const $$btnChoiceSubject = $$(".quiz-choices--list button");
+  const $btnPlayAgain = $("#play-again");
 
   const showSpinner = (show) => {
     show
@@ -27,10 +30,11 @@ import { questionsForm } from "./module.questions.js";
   };
 
   const showSectionComplete = (state) => {
+    $totalAnswers.innerHTML = `out of ${state.total}`;
+    $totalCorrectAnswers.innerHTML = `${state.correctAnswers}`;
+
     $quizQuestions.classList.add("hidden");
     $quizComplete.classList.remove("hidden");
-
-    console.log(showSectionComplete, state);
   };
 
   Array.from($$btnChoiceSubject).forEach((btn) => {
@@ -40,18 +44,15 @@ import { questionsForm } from "./module.questions.js";
       showSpinner(true);
 
       const subject = btn.getAttribute("data-option");
+      const dataQuestions = await getQuestions(subject);
 
       $headerOptionsSelected.innerHTML = "";
       $quizCompleteResult.innerHTML = "";
 
       Array.from(btn.children).forEach((child) => {
-        const cloned = child.cloneNode(true);
-
-        $headerOptionsSelected.append(cloned);
-        $quizCompleteResult.append(cloned);
+        $headerOptionsSelected.appendChild(child.cloneNode(true));
+        $quizCompleteResult.appendChild(child.cloneNode(true));
       });
-
-      const dataQuestions = await getQuestions(subject);
 
       showSpinner(false);
 
@@ -65,6 +66,12 @@ import { questionsForm } from "./module.questions.js";
       $quizChoices.classList.add("hidden");
       $quizQuestions.classList.remove("hidden");
     });
+  });
+
+  $btnPlayAgain.addEventListener("click", (evt) => {
+    evt.preventDefault();
+
+    initialization();
   });
 
   initialization();
