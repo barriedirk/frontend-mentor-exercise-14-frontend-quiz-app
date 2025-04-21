@@ -187,11 +187,11 @@ main {
   background-position: 95% 50%;
 }
 
-.quiz-answer-option-wrapper:focus {
+/* .quiz-answer-option-wrapper:focus {
   outline: 1px dotted var(--clr-purple-600);
   outline-offset: 2px;
   border-radius: 4px;
-}
+} */
 
 .quiz-answer-option-wrapper input[type="radio"] {
   display: none;

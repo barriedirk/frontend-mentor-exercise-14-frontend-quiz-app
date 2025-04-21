@@ -11,6 +11,23 @@
       href="./assets/images/favicon-32x32.png"
     />
 
+    <meta name="author" content="Barrie Freyre" />
+
+    <!-- These won’t be understood by browsers or SEO tools directly but might be useful if you're using scripts or tools that read them.-->
+    <meta name="linkedin" content="https://www.linkedin.com/in/barriefreyre/" />
+    <meta name="github" content="https://github.com/barriedirk" />
+    <meta
+      name="frontendmentor"
+      content="https://www.frontendmentor.io/profile/barriedirk"
+    />
+
+    <!--
+    This is a more semantically correct way, used for linking to identities or social profiles:
+    rel="me" is recognized by some platforms (like Mastodon, IndieWeb, etc.) to indicate ownership or identity.-->
+    <link rel="me" href="https://www.linkedin.com/in/barriefreyre/" />
+    <link rel="me" href="https://github.com/barriedirk" />
+    <link rel="me" href="https://www.frontendmentor.io/profile/barriedirk" />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -22,8 +39,8 @@
     <link rel="stylesheet" href="./main.css" />
     <link rel="stylesheet" href="./checkbox-toggle.css" />
 
-    <script defer type="module" src="./main.js"></script>
-    <script defer type="module" src="./toggle-switch.js"></script>
+    <script type="module" src="./main.js"></script>
+    <script type="module" src="./toggle-switch.js"></script>
 
     <title>Frontend Mentor | Frontend quiz app</title>
   </head>
@@ -34,8 +51,8 @@
     <main>
       <header class="quiz-header flex-row">
         <div class="quiz-header--option-selected flex-row">
-          <img src="./assets/images/icon-html.svg" class="bg-orange" />
-          <span>HTML</span>
+          <!-- <img src="./assets/images/icon-html.svg" class="bg-orange" />
+          <span>HTML</span> -->
         </div>
         <div class="quiz-header__toggle flex-row">
           <span class="icon-sun"></span>
@@ -47,7 +64,7 @@
                 id="theme-toggle"
                 aria-label="Toggle between dark and light mode"
               />
-              <div class="slider round"></div>
+              <span class="slider round"></span>
             </label>
           </div>
 
@@ -61,22 +78,34 @@
             <h1>Welcome to the <strong>Frontend Quiz!</strong></h1>
             <p>Pick a subject to get started.</p>
           </div>
-          <ul class="quiz-choices--list flex-column" role="tablist">
+          <ul class="quiz-choices--list flex-column" role="list">
             <li>
               <button data-option="HTML" class="flex-row" type="button">
-                <img src="./assets/images/icon-html.svg" class="bg-orange" />
+                <img
+                  src="./assets/images/icon-html.svg"
+                  class="bg-orange"
+                  alt="HTML icon"
+                />
                 <span>HTML</span>
               </button>
             </li>
             <li>
               <button data-option="CSS" class="flex-row" type="button">
-                <img src="./assets/images/icon-css.svg" class="bg-green" />
+                <img
+                  src="./assets/images/icon-css.svg"
+                  class="bg-green"
+                  alt="CSS icon"
+                />
                 <span>CSS</span>
               </button>
             </li>
             <li>
               <button data-option="JavaScript" class="flex-row" type="button">
-                <img src="./assets/images/icon-js.svg" class="bg-blue" />
+                <img
+                  src="./assets/images/icon-js.svg"
+                  class="bg-blue"
+                  alt="JS icon"
+                />
                 <span>JavaScript</span>
               </button>
             </li>
@@ -89,6 +118,7 @@
                 <img
                   src="./assets/images/icon-accessibility.svg"
                   class="bg-purple"
+                  alt="Accessibility icon"
                 />
                 <span>Accessibility</span>
               </button>
@@ -99,13 +129,13 @@
         <section class="quiz-questions--wrapper hidden" aria-live="polite">
           <div class="question flex-column">
             <!-- As an example -->
-            <!-- <p class="quiz-questions--advanced">Question 6 of 10</p>
-            <h2 class="quiz-questions--title">
+            <!-- <p class="quiz-questions- advanced">Question 6 of 10</p>
+            <h2 class="quiz-questions- title">
               Which of these color contrast ratios defines the minimum WCAG 2.1
               Level AA requirement for normal text?
             </h2> -->
-            <p class="quiz-questions--advanced"></p>
-            <h2 class="quiz-questions--title"></h2>
+            <p class="quiz-questions--advanced">&nbsp;</p>
+            <h2 class="quiz-questions--title">&nbsp;</h2>
             <div class="quiz-progress-bar-wrapper">
               <div class="quiz-progress-bar" style="width: 0%"></div>
             </div>
@@ -227,7 +257,10 @@
                 Show Result
               </button>
               <div class="select-an-answer hidden flex-row">
-                <img src="./assets/images/icon-error.svg" />
+                <img
+                  src="./assets/images/icon-error.svg"
+                  alt="Illustration of Error Icon"
+                />
                 <span>Please select an answer</span>
               </div>
             </div>
@@ -247,8 +280,6 @@
                 <!-- <img src="./assets/images/icon-html.svg" class="bg-orange" />
                 <span>HTML</span> -->
               </div>
-              <!-- <p class="quiz-complete--correct-answers">8</p>
-              <p class="quiz-complete--total-answers">out of 10</p> -->
               <p class="quiz-complete--correct-answers"></p>
               <p class="quiz-complete--total-answers"></p>
             </div>
